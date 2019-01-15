@@ -1,0 +1,42 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+{% if config.plugins.breadcrumbs.enabled %}
+    {% include 'partials/breadcrumbs.html.twig' %}
+{% endif %}
+<h1>{{ page.title }}</h1>
+
+<div class="columns">
+    {% for p in page.collection.order('folder','asc') %}
+      {% if not p.header.hidden %}
+        <div class="column col-2 col-lg-3 col-sm-6 col-xs-12 obituaries-image-index">
+            <div class="card">
+                <div class="card-image">
+                    {% set image = p.media.images|first %}
+                    <a href="{{ p.url }}"><img src="{{ image.cropZoom(320,427).url }}" class="img-responsive"
+                                               alt="{{ p.title }}"></a>
+                </div>
+                <div class="card-body">
+                    {% if p.header.data.name %}
+                      <div class="card-title h5 text-center"><a href="{{ p.url }}">{{ p.header.data.name }}</a></div>
+                    {% endif %}
+                    {% if p.header.data.date %}
+                      <div class="card-subtitle text-gray text-center">({{ p.header.data.date }})</div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+</div>
+<div class="columns">
+  <div class="column col-12">
+    <hr>
+    <h2><a href="{{ base_url_relative }}/about/bios-obituaries/source-for-information-about-some-seismologists">Source for information about some seismologists</a></h2>
+    <p>
+      If you have any additional contributions for this page, please <a href="{{ base_url_relative }}/about/structure">contact the IASPEI Secretary General</a>.
+    </p>
+  </div>
+</div>
+
+{% endblock %}

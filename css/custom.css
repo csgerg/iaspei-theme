@@ -1,0 +1,29 @@
+h1 {
+  font-size: 35px;
+}
+
+h2 {
+  font-size: 29px;
+}
+
+.columns td {
+    vertical-align:top;
+}
+
+.figure-default { margin: 1em 1em 1em 0em }
+
+.obituaries-image-index { padding: 8px }
+
+.logo-title {font-size: xx-large}
+
+.frontpage-image {padding-bottom: 2em}
+
+.frontpage-menu {margin-top: 40px}
+
+#breadcrumbs {font-size: small;}
+
+@media (max-width: 973px) { #breadcrumbs { display: none; } }
+
+@media (max-width: 1279px) { #header .navbar-section.desktop-menu { display: none; } }
+
+@media (max-width: 1279px) { .mobile-menu { display: block; } }

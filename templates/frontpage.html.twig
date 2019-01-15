@@ -1,0 +1,39 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+
+  <div class="container" style="margin-top:-70px">
+    <div class="columns">
+      <div class="column col-12 mt-2" style="background-image: url('{{ page.media['background-header.jpg'].url }}');">
+        <div class="columns pt-2">
+          <div class="column col-4">
+            <figure>
+              <img src="{{ page.media['IASPEI_logo.svg'].url }}" class="img-fit-contain img-responsive"/>
+            </figure>
+          </div>
+          <div class="column col-8">
+            <h1 style="margin-top: 0em; color:white; font-weight: bold; font-size: 2.5rem">International Association of Seismology and
+               Physics of the Earth's Interior</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="columns">
+      <div class="column col-7 col-xs-12 col-mx-auto text-center">
+        <h2>
+          IASPEI promotes the study of the structure, properties, and processes of the Earth. It is one of the eight
+           Associations that comprise the International Union of Geodesy and Geophysics (IUGG).
+        </h2>
+      </div>
+      <div class="column col-2 col-xs-12 col-ml-auto frontpage-menu">
+        {{ page.content|raw }}
+      </div>
+    </div>
+    <div class="columns">
+      <div class="column col-7 col-xs-12 col-mx-auto text-center pt-2">
+        <img src="{{ page.media['circles.gif'].url }}" class="img-responsive"/>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
